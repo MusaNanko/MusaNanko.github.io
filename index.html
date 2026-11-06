@@ -3,218 +3,387 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Moussa Traore</title>
-<meta name="description" content="Moussa Traore, software engineer working on data platforms and back-end services at CNRS.">
+<title>Moussa Traore · Software Engineer</title>
+<meta name="description" content="Moussa Traore, software engineer at CNRS: data platforms, back-end services and identity for research.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-:root {
-  --bg: #ffffff;
-  --fg: #1f2328;
-  --muted: #646b73;
-  --line: #ececea;
-  --hover: #f6f6f4;
-  --accent: #2f6f62;
-  --font: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
-  color-scheme: light;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body { margin: 0; background: var(--bg); color: var(--muted); font-family: var(--font); font-size: 16px; line-height: 1.7; padding: 0 24px; }
-a { color: inherit; text-decoration: none; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-strong { color: var(--fg); font-weight: 500; }
+:root{--two-col:repeat(2,minmax(0,1fr))}
+@media (max-width:600px){:root{--two-col:minmax(0,1fr)}}
+body{margin:0;background:#ffffff}
+a{color:#1d4f91;text-decoration:none}a:hover{color:#163b6c;text-decoration:underline}
+a:focus-visible{outline:2px solid #1d4f91;outline-offset:3px;border-radius:4px}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+nav a:hover{color:#1d4f91!important}
+nav a[aria-current="true"]{color:#1d4f91!important;box-shadow:inset 0 -2px 0 #1d4f91}
+nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
+@media (prefers-reduced-motion:reduce){nav div div a{transition:none}}
 
-.wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 72px; }
-.side { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 96px 0 64px; }
-main { padding: 96px 0; min-width: 0; }
-
-h1 { margin: 0; color: var(--fg); font-size: 2.6rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
-.role { margin: 10px 0 0; color: var(--fg); font-size: 1.15rem; font-weight: 500; }
-.tagline { margin: 14px 0 0; max-width: 32ch; }
-
-nav ul { list-style: none; margin: 56px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-nav a { font-size: 0.9rem; font-weight: 500; color: var(--muted); }
-nav a:hover, nav a.active { color: var(--fg); }
-
-.contact { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; margin: 0; padding: 0; font-size: 0.92rem; }
-.contact a:hover { color: var(--accent); }
-.mail { margin: 12px 0 0; font-size: 0.9rem; }
-.mail a:hover { color: var(--accent); }
-
-section { margin-bottom: 96px; scroll-margin-top: 48px; }
-h2 { display: none; margin: 0 0 20px; color: var(--fg); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-.about p { margin: 0 0 16px; max-width: 60ch; }
-
-.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.item { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 20px; padding: 20px; margin: 0 -20px; border-radius: 10px; transition: opacity .25s ease, background .25s ease; }
-.list:hover .item { opacity: 0.5; }
-.list .item:hover { opacity: 1; background: var(--hover); }
-.when { font-size: 0.8rem; padding-top: 2px; }
-.item h3 { margin: 0; color: var(--fg); font-size: 1rem; font-weight: 600; line-height: 1.45; }
-.item h3 span { color: var(--muted); font-weight: 400; }
-.item p { margin: 6px 0 0; font-size: 0.94rem; }
-.item ul.pts { margin: 6px 0 0; padding-left: 18px; font-size: 0.94rem; }
-.item ul.pts li { margin-bottom: 4px; }
-.tech { margin: 10px 0 0; font-size: 0.82rem; color: var(--accent); }
-.item a.title:hover { color: var(--accent); }
-.shot { display: block; margin: 14px 0 0; width: 100%; max-width: 100%; aspect-ratio: 2 / 1; object-fit: cover; object-position: top left; border: 1px solid var(--line); border-radius: 8px; }
-
-.more { display: inline-block; margin-top: 24px; color: var(--fg); font-weight: 500; font-size: 0.95rem; }
-.more:hover { color: var(--accent); }
-footer { font-size: 0.85rem; max-width: 50ch; }
-
-@media (max-width: 960px) {
-  body { padding: 0 20px; }
-  .wrap { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .side { position: static; height: auto; padding: 64px 0 16px; gap: 28px; }
-  nav { display: none; }
-  main { padding: 40px 0 72px; }
-  h2 { display: block; }
-  section { margin-bottom: 64px; }
-  .item { grid-template-columns: minmax(0, 1fr); gap: 4px; margin: 0; padding: 0; }
-  .list { gap: 32px; }
-  .list:hover .item, .list .item:hover { opacity: 1; background: transparent; }
-}
+.side-nav{display:none;position:fixed;top:96px;left:max(24px,calc(50% - 600px));width:170px;font-family:Inter,-apple-system,'Segoe UI',sans-serif}
+.side-nav .sn-name{display:block;font-weight:700;font-size:15px;color:#1f2328;text-decoration:none}
+.side-nav .sn-role{margin:2px 0 0;font-size:13px;color:#5b626b}
+.side-nav ol{list-style:none;margin:28px 0 0;padding:0;position:relative}
+.side-nav ol::before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:2px;background:#dfe3e8}
+.side-nav a.sn-link{display:flex;align-items:center;gap:14px;padding:7px 0;color:#5b626b;font-size:14px;text-decoration:none;transition:color .2s ease}
+.side-nav .dot{width:12px;height:12px;border-radius:50%;border:2px solid #b9c1ca;background:#ffffff;box-sizing:border-box;position:relative;z-index:1;flex:none;transition:background .2s ease,border-color .2s ease}
+.side-nav a.sn-link:hover{color:#1f2328}
+.side-nav a.sn-link:hover .dot{border-color:#1d4f91}
+.side-nav a.sn-link[aria-current="true"]{color:#1f2328;font-weight:600}
+.side-nav a.sn-link[aria-current="true"] .dot{background:#1d4f91;border-color:#1d4f91}
+@media (min-width:1180px){.top-nav{display:none!important}.side-nav{display:block}}
+@media (prefers-reduced-motion:reduce){.side-nav a.sn-link,.side-nav .dot{transition:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="side">
-    <div>
-      <h1>Moussa Traore</h1>
-      <p class="role">Software Engineer, Data Platform</p>
-      <p class="tagline">I build data pipelines, back ends and access control for research teams at CNRS.</p>
-      <nav aria-label="Sections">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div>
-      <ul class="contact">
-        <li><a href="https://github.com/MusaNanko">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/moussanankotraore">LinkedIn</a></li>
-        <li><a href="https://leetcode.com/u/moussatraore7173/">LeetCode</a></li>
-        <li><a href="resume.pdf">Resume</a></li>
-      </ul>
-      <p class="mail"><a href="mailto:moussatraore7173@gmail.com">moussatraore7173@gmail.com</a></p>
-    </div>
-  </header>
+<aside class="side-nav" aria-label="Sections">
+<a class="sn-name" href="#top">Moussa Traore</a>
+<p class="sn-role">Software Engineer</p>
+<ol>
+<li><a class="sn-link" href="#experience"><span class="dot" aria-hidden="true"></span>Experience</a></li>
+<li><a class="sn-link" href="#talks"><span class="dot" aria-hidden="true"></span>Talks &amp; publications</a></li>
+<li><a class="sn-link" href="#education"><span class="dot" aria-hidden="true"></span>Education</a></li>
+<li><a class="sn-link" href="#projects"><span class="dot" aria-hidden="true"></span>Projects</a></li>
+<li><a class="sn-link" href="#interests"><span class="dot" aria-hidden="true"></span>Interests</a></li>
+<li><a class="sn-link" href="#links"><span class="dot" aria-hidden="true"></span>Contact</a></li>
+</ol>
+</aside>
+<div style="background: #ffffff; color: #1f2328; font-family: Inter, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.65; padding: 0 20px 96px">
+<nav class="top-nav" aria-label="Sections" style="position: sticky; top: 0; z-index: 10; background: #ffffff; border-bottom: 1px solid #eceef1; margin: 0 -20px; padding: 0 20px">
+<div style="max-width: 760px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 20px; padding: 14px 0">
+<a href="#top" style="font-weight: 700; color: #1f2328; text-decoration: none">Moussa Traore</a>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14px; font-weight: 500">
+<a href="#experience" style="color: #3a4048">Experience</a>
+<a href="#talks" style="color: #3a4048">Talks</a>
+<a href="#education" style="color: #3a4048">Education</a>
+<a href="#projects" style="color: #3a4048">Projects</a>
+<a href="#interests" style="color: #3a4048">Interests</a>
+<a href="#links" style="color: #3a4048">Contact</a>
+</div>
+</div>
+</nav>
+<div id="top" style="max-width: 760px; margin: 56px auto 0; display: flex; flex-direction: column; gap: 56px; scroll-margin-top: 80px">
 
-  <main>
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>I'm a software engineer at <strong>CNRS</strong> in Besançon, France, with two years of experience building data platforms and web applications in Python, Java and JavaScript.</p>
-      <p>I build data platforms and back-end services for research: the <strong>Airflow pipelines</strong> that bring in sensor data, the <strong>APIs and web apps</strong> researchers use to explore it, and the <strong>Docker and GitLab CI/CD</strong> setup that runs it, with Keycloak single sign-on across services.</p>
-      <p>Outside work, I'm an early member of <a href="https://www.aimali.ai"><strong>AI Mali</strong></a>, where we build AI tools and datasets for Malian languages (Bambara, Dogon, Soninke, Fulfulde) and software for reforestation in Mali.</p>
-    </section>
+<header style="display: flex; flex-direction: column; gap: 12px">
+<h1 style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em">Moussa Traore</h1>
+<p style="margin: 0; font-size: 18px; font-weight: 500; color: #3a4048">Software Engineer, Data Platform · CNRS</p>
+<p style="margin: 0; color: #5b626b; max-width: 60ch">I build data platforms and back-end services for research, from the pipelines that bring in sensor data to the apps researchers use to explore it.</p>
+<nav aria-label="Links" style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; font-weight: 500">
+<a href="https://github.com/MusaNanko">GitHub</a>
+<a href="https://www.linkedin.com/in/moussanankotraore">LinkedIn</a>
+<a href="https://leetcode.com/u/moussatraore7173/">LeetCode</a>
+<a href="resume.pdf">Resume</a>
+<a href="mailto:moussatraore7173@gmail.com">moussatraore7173@gmail.com</a>
+</nav>
+</header>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <ol class="list">
-        <li class="item">
-          <div class="when">2025 — Present</div>
-          <div>
-            <h3>Software Engineer, Data Platform <span>· CNRS</span></h3>
-            <ul class="pts">
-              <li>Build and validate Apache Airflow pipelines in Python ingesting 10M+ environmental sensor records from several sources.</li>
-              <li>Cut response times of key analytical PostgreSQL and MySQL queries by up to 60% through query rewrites and indexing.</li>
-              <li>Operate Keycloak (OpenID Connect) authentication for 10 open-source services behind Traefik.</li>
-              <li>Ship releases with Docker Compose through a tag-based GitLab CI/CD workflow, with Trivy scanning as a blocking stage.</li>
-            </ul>
-            <p class="tech">Python · Airflow · PostgreSQL · Keycloak · Docker · GitLab CI/CD</p>
-          </div>
-        </li>
-        <li class="item">
-          <div class="when">2024 — 2025</div>
-          <div>
-            <h3>Software Engineer <span>· Forum des Marais Atlantiques</span></h3>
-            <ul class="pts">
-              <li>Developed Java EE back-end features and web services with an Angular front end for a national environmental data platform.</li>
-              <li>Introduced unit testing and verification-driven deployment, reducing production bugs by 25% and deployment time by 40%.</li>
-            </ul>
-            <p class="tech">Java EE · Angular · Oracle</p>
-          </div>
-        </li>
-        <li class="item">
-          <div class="when">2024</div>
-          <div>
-            <h3>Software Engineering Intern <span>· Forum des Marais Atlantiques</span></h3>
-            <ul class="pts">
-              <li>Turned stakeholder needs into 15 functional and technical requirements for a national Oracle wetlands database.</li>
-              <li>Wrote the technical specification of a data architecture connecting 50,000+ datasets.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-      <a class="more" href="resume.pdf">View full resume →</a>
-    </section>
+<section id="stack" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Stack</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="list">
-        <li class="item">
-          <div class="when">CNRS</div>
-          <div>
-            <h3>OMIV web apps</h3>
-            <p>I maintain the R Shiny web apps and Flask back-ends of OMIV, the French Landslide Observatory, a national research service supported by CNRS Terre et Univers and run with five observatories. I handle all of the platform's configuration. The apps give open access to geodesy, hydrology and micro-seismicity data. A new version goes live in November 2026.</p>
-            <p class="tech">R · Shiny · Flask · Docker</p>
-            <img class="shot" src="omiv.jpg" alt="OMIV portal home page: observatory description and data access for geodesy, hydrology and seismology" loading="lazy">
-          </div>
-        </li>
-        <li class="item">
-          <div class="when">CNRS</div>
-          <div>
-            <h3>KarstFlow</h3>
-            <p>A web app I built for karst spring sensor data. Researchers upload raw files and the app detects and corrects sensor artefacts, such as out-of-water readings and isolated electronic spikes, while leaving real signal like floods untouched.</p>
-            <p class="tech">FastAPI · pandas · React · TypeScript</p>
-          </div>
-        </li>
-        <li class="item">
-          <div class="when">AI Mali</div>
-          <div>
-            <h3>TimaTon</h3>
-            <p>An offline-first reforestation app for field agents in Mali: the mobile app records plantings with GPS and syncs when a connection returns. I took part in the technical choices (architecture and stack) and will set up the iOS release.</p>
-            <p class="tech">React Native · Expo · SQLite · Node.js · PostgreSQL</p>
-          </div>
-        </li>
-        <li class="item">
-          <div class="when">AI Mali</div>
-          <div>
-            <h3><a class="title" href="https://www.aimali.ai">aimali.ai ↗</a></h3>
-            <p>Bilingual (French / English) website and admin CMS for AI Mali, built as one of three contributors.</p>
-            <p class="tech">React · Vite · Tailwind · Hono · Cloudflare Workers</p>
-            <img class="shot" src="aimali.jpg" alt="aimali.ai home page: An AI that listens before it reads" loading="lazy">
-          </div>
-        </li>
-        <li class="item">
-          <div class="when">AI Mali</div>
-          <div>
-            <h3>Bambara language dataset</h3>
-            <p>Collected and annotated 10,000+ Bambara words for a low-resource language dataset, as part of research on distributed AI for language modeling.</p>
-          </div>
-        </li>
-      </ul>
-    </section>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/python.svg" alt="" style="width: 20px; height: 20px">
+<span>Python</span>
+</div>
 
-    <footer>MSc in Computer Science (Databases and AI), Université de Bourgogne Europe · French and Bambara (native), English (professional).</footer>
-  </main>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/postgresql.svg" alt="" style="width: 20px; height: 20px">
+<span>PostgreSQL</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/airflow.svg" alt="" style="width: 20px; height: 20px">
+<span>Airflow</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/fastapi.svg" alt="" style="width: 20px; height: 20px">
+<span>FastAPI</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/flask.svg" alt="" style="width: 20px; height: 20px">
+<span>Flask</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/r.svg" alt="" style="width: 20px; height: 20px">
+<span>R</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/docker.svg" alt="" style="width: 20px; height: 20px">
+<span>Docker</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/gitlab.svg" alt="" style="width: 20px; height: 20px">
+<span>GitLab CI/CD</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/react.svg" alt="" style="width: 20px; height: 20px">
+<span>React</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/typescript.svg" alt="" style="width: 20px; height: 20px">
+<span>TypeScript</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/java.svg" alt="" style="width: 20px; height: 20px">
+<span>Java</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/cplusplus.svg" alt="" style="width: 20px; height: 20px">
+<span>C++</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
+<img src="img/linux.svg" alt="" style="width: 20px; height: 20px">
+<span>Linux</span>
+</div>
+
+</div>
+</section>
+
+<section id="experience" style="display: flex; flex-direction: column; gap: 24px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Experience</h2>
+
+<div style="display: flex; flex-direction: column">
+
+<article style="display: flex; gap: 20px; align-items: stretch">
+<div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
+<img src="img/cnrs.png" alt="CNRS logo" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #e6e8eb; object-fit: contain; background: #ffffff; flex: none">
+<div aria-hidden="true" style="width: 2px; flex: 1; min-height: 24px; background: #dfe3e8; margin-top: 8px"></div>
+</div>
+<div style="flex: 1; min-width: 0; padding-bottom: 36px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Software Engineer, Data Platform · CNRS</h3>
+<span style="font-size: 14px; color: #5b626b">Feb 2025 – Present · 1 yr 10 mos</span>
+</div>
+<p style="margin: 2px 0 0; font-size: 14px; color: #5b626b">Besançon, France</p>
+<ul style="margin: 8px 0 0; padding-left: 18px; color: #3a4048; font-size: 15px">
+<li><strong style="font-weight: 600">Sens2viz</strong>: monitored platform that retrieves, stores, visualizes and shares sensor data under FAIR principles, built as Dockerized microservices on Airflow, TimescaleDB and Grafana. Presented at JDEV 2026.</li>
+<li>Apache Airflow pipelines in Python ingesting 10M+ environmental sensor records.</li>
+<li>Security and user management: Keycloak (OpenID Connect) single sign-on for 10 services behind Traefik, with access kept separate per sensor network.</li>
+<li>Up to 60% faster analytical PostgreSQL and MySQL queries; Docker Compose releases through GitLab CI/CD with Trivy scanning.</li>
+<li>Maintain the OMIV R Shiny apps and Flask back-ends (see Projects); built KarstFlow, a FastAPI and React tool that corrects karst sensor artefacts.</li>
+</ul>
+</div>
+</article>
+
+<article style="display: flex; gap: 20px; align-items: stretch">
+<div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
+<img src="img/aimali-logo.png" alt="AI Mali logo" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #e6e8eb; object-fit: contain; padding: 4px; box-sizing: border-box; background: #ffffff; flex: none">
+<div aria-hidden="true" style="width: 2px; flex: 1; min-height: 24px; background: #dfe3e8; margin-top: 8px"></div>
+</div>
+<div style="flex: 1; min-width: 0; padding-bottom: 36px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Early Member · AI Mali</h3>
+<span style="font-size: 14px; color: #5b626b">2025 – Present · Volunteer</span>
+</div>
+<p style="margin: 2px 0 0; font-size: 14px; color: #5b626b">Remote · non-profit building AI for Malian languages</p>
+<ul style="margin: 8px 0 0; padding-left: 18px; color: #3a4048; font-size: 15px">
+<li>Chaired about 30 of the 40 Weekly Talks (2025 – 2026) with researchers, PhD students and policymakers; speaker of Talk #30, Blockchain and Africa.</li>
+<li>Built the front end of the bilingual website and admin CMS (React, Vite, Tailwind), as one of three contributors.</li>
+<li>Technical choices for the TimaTon reforestation app; setting up its iOS release.</li>
+<li>Promotion of talks and projects on AI Mali's social networks.</li>
+<li>Collected and annotated Bambara words for a low-resource language dataset.</li>
+</ul>
+</div>
+</article>
+
+<article style="display: flex; gap: 20px; align-items: stretch">
+<div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
+<img src="img/fma-logo.png" alt="Forum des Marais Atlantiques logo" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #e6e8eb; object-fit: contain; padding: 3px; box-sizing: border-box; background: #ffffff; flex: none">
+<div aria-hidden="true" style="width: 2px; flex: 1; min-height: 24px; background: #dfe3e8; margin-top: 8px"></div>
+</div>
+<div style="flex: 1; min-width: 0; padding-bottom: 28px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Forum des Marais Atlantiques</h3>
+<p style="margin: 2px 0 0; font-size: 14px; color: #5b626b">Rochefort, France · 1 yr in total</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-top: 14px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 600">Software Engineer</h4>
+<span style="font-size: 14px; color: #5b626b">Aug 2024 – Jan 2025 · 6 mos</span>
+</div>
+<ul style="margin: 6px 0 0; padding-left: 18px; color: #3a4048; font-size: 15px">
+<li>Java EE back end and Angular front end for a national wetlands data platform.</li>
+<li>Unit testing and verified deployments: 25% fewer production bugs, 40% faster deployments.</li>
+</ul>
+</div>
+</article>
+
+<article style="display: flex; gap: 20px; align-items: stretch">
+<div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
+<img src="img/fma-logo.png" alt="Forum des Marais Atlantiques logo" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #e6e8eb; object-fit: contain; padding: 3px; box-sizing: border-box; background: #ffffff; flex: none">
+</div>
+<div style="flex: 1; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 600">Software Engineering Intern</h4>
+<span style="font-size: 14px; color: #5b626b">Feb 2024 – Aug 2024 · 7 mos</span>
+</div>
+<ul style="margin: 6px 0 0; padding-left: 18px; color: #3a4048; font-size: 15px">
+<li>15 functional and technical requirements for a national Oracle wetlands database.</li>
+<li>Technical specification of a data architecture connecting 50,000+ datasets.</li>
+</ul>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="talks" style="display: flex; flex-direction: column; gap: 20px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Talks &amp; Publications</h2>
+<article style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 16px 20px; border: 1px solid #e6e8eb; border-radius: 10px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600"><a href="https://arxiv.org/abs/2506.02443">Breaking the Barriers of Text-Hungry and Audio-Deficient AI</a></h3>
+<p style="margin: 4px 0 0; font-size: 15px; color: #3a4048">arXiv:2506.02443 · co-author (6th of 34) · textless audio-to-audio AI for unwritten languages</p>
+</div>
+<span style="font-size: 14px; color: #5b626b">Jun 2025</span>
+</article>
+<article style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 16px 20px; border: 1px solid #e6e8eb; border-radius: 10px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600"><a href="https://jdev26.sciencesconf.org/733110">Sens2viz: a monitored platform for retrieving, managing and visualizing sensor data</a></h3>
+<p style="margin: 4px 0 0; font-size: 15px; color: #3a4048">JDEV 2026, Journées du Développement Logiciel · national conference talk</p>
+<p style="margin: 2px 0 0; font-size: 14px; color: #5b626b">J. Pergaud, Q. Bidolet, M. Smolinski, M. Traoré</p>
+</div>
+<span style="font-size: 14px; color: #5b626b">2026</span>
+</article>
+<article style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 16px 20px; border: 1px solid #e6e8eb; border-radius: 10px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Blockchain and Africa: understand, apply, demystify</h3>
+<p style="margin: 4px 0 0; font-size: 15px; color: #3a4048">AI Mali Weekly Talk #30 · speaker</p>
+</div>
+<span style="font-size: 14px; color: #5b626b">Nov 2025</span>
+</article>
+</section>
+
+<section id="education" style="display: flex; flex-direction: column; gap: 24px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Education</h2>
+<div style="display: flex; flex-direction: column">
+<article style="display: flex; gap: 20px; align-items: stretch">
+<div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
+<img src="img/ub-logo.svg" alt="Université de Bourgogne logo" style="width: 48px; height: 48px; border-radius: 10px; object-fit: contain; padding: 6px; box-sizing: border-box; background: #1f2328; flex: none">
+<div aria-hidden="true" style="width: 2px; flex: 1; min-height: 24px; background: #dfe3e8; margin-top: 8px"></div>
+</div>
+<div style="flex: 1; min-width: 0; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">MSc in Computer Science, Databases and AI</h3>
+<span style="font-size: 14px; color: #5b626b">2022 – 2024</span>
+</div>
+<p style="margin: 2px 0 0; font-size: 15px; color: #3a4048">Université de Bourgogne, Dijon</p>
+</div>
+</article>
+<article style="display: flex; gap: 20px; align-items: stretch">
+<div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
+<img src="img/ub-logo.svg" alt="Université de Bourgogne logo" style="width: 48px; height: 48px; border-radius: 10px; object-fit: contain; padding: 6px; box-sizing: border-box; background: #1f2328; flex: none">
+</div>
+<div style="flex: 1; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">BSc in Mathematics and Computer Science</h3>
+<span style="font-size: 14px; color: #5b626b">2019 – 2022</span>
+</div>
+<p style="margin: 2px 0 0; font-size: 15px; color: #3a4048">Université de Bourgogne, Dijon</p>
+</div>
+</article>
+</div>
+</section>
+
+<section id="projects" style="display: flex; flex-direction: column; gap: 24px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Projects</h2>
+
+<div style="display: flex; flex-direction: column; gap: 32px">
+
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-start">
+<img src="img/omiv.jpg" alt="OMIV portal home page with data access and station map" style="width: 168px; max-width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-radius: 6px; border: 1px solid #dfe3e8; flex: none">
+<div style="flex: 1 1 320px; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">OMIV web apps</h3>
+<p style="margin: 6px 0 0; color: #3a4048; font-size: 15px">I maintain the R Shiny apps and Flask back-ends of the French Landslide Observatory, a national CNRS research service, and handle all of its configuration. New version live in November 2026.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px">
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">R Shiny</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">Flask</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">Docker</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">GitLab CI/CD</span>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-start">
+<img src="img/aimali.jpg" alt="aimali.ai home page" style="width: 168px; max-width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-radius: 6px; border: 1px solid #dfe3e8; flex: none">
+<div style="flex: 1 1 320px; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600"><a href="https://www.aimali.ai">aimali.ai ↗</a></h3>
+<p style="margin: 6px 0 0; color: #3a4048; font-size: 15px">I built the front end of AI Mali's bilingual (French / English) website and admin CMS, as one of three contributors. The API runs on Hono and Cloudflare Workers.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px">
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">React</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">Vite</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">Tailwind</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">Cloudflare</span>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-start">
+<img src="img/raymarch.jpg" alt="Ray-marched scene with depth of field and motion blur" style="width: 168px; max-width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; border: 1px solid #dfe3e8; flex: none">
+<div style="flex: 1 1 320px; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Real-time ray marching engine</h3>
+<p style="margin: 6px 0 0; color: #3a4048; font-size: 15px">An interactive GPU renderer whose scenes are signed distance functions combined in a CSG tree, with a free camera, temporal smoothing, depth of field and motion blur.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px">
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">C++</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">OpenGL</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">GLSL</span>
+<span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">SDL</span>
+</div>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="interests" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Interests</h2>
+<div style="display: grid; grid-template-columns: var(--two-col); gap: 12px">
+<div style="padding: 14px 16px; border: 1px solid #e6e8eb; border-radius: 10px">
+<p style="margin: 0; font-size: 15px; font-weight: 500; color: #1f2328">Football</p>
+</div>
+<div style="padding: 14px 16px; border: 1px solid #e6e8eb; border-radius: 10px">
+<p style="margin: 0; font-size: 15px; font-weight: 500; color: #1f2328">Cooking</p>
+</div>
+<div style="padding: 14px 16px; border: 1px solid #e6e8eb; border-radius: 10px">
+<p style="margin: 0; font-size: 15px; font-weight: 500; color: #1f2328">French-language literature</p>
+<p style="margin: 2px 0 0; font-size: 13px; color: #5b626b">Yambo Ouologuem, Aimé Césaire, Jean d'Ormesson</p>
+</div>
+<div style="padding: 14px 16px; border: 1px solid #e6e8eb; border-radius: 10px">
+<p style="margin: 0; font-size: 15px; font-weight: 500; color: #1f2328">Competitive programming</p>
+<p style="margin: 2px 0 0; font-size: 13px; color: #5b626b">Algorithms and data structures</p>
+</div>
+</div>
+</section>
+
+<section id="links" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Links</h2>
+<div style="display: grid; grid-template-columns: var(--two-col); gap: 12px">
+<a href="https://github.com/MusaNanko" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">GitHub <span style="color: #5b626b; font-weight: 400">MusaNanko</span></a>
+<a href="https://www.linkedin.com/in/moussanankotraore" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">LinkedIn <span style="color: #5b626b; font-weight: 400">moussanankotraore</span></a>
+<a href="https://leetcode.com/u/moussatraore7173/" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">LeetCode <span style="color: #5b626b; font-weight: 400">moussatraore7173</span></a>
+<a href="https://www.aimali.ai" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">AI Mali <span style="color: #5b626b; font-weight: 400">aimali.ai</span></a>
+<a href="resume.pdf" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">Resume <span style="color: #5b626b; font-weight: 400">PDF</span></a>
+<a href="mailto:moussatraore7173@gmail.com" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">Email <span style="color: #5b626b; font-weight: 400">moussatraore7173@gmail.com</span></a>
+</div>
+</section>
+
+<footer style="font-size: 14px; color: #5b626b">French and Bambara (native) · English (professional) · Based in Belfort, France</footer>
+</div>
 </div>
 <script>
-(function () {
-  var links = document.querySelectorAll('nav a');
-  if (!('IntersectionObserver' in window)) return;
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  document.querySelectorAll('main section').forEach(function (s) { obs.observe(s); });
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a[href^="#"], .side-nav a.sn-link')).filter(function(a){return a.getAttribute('href')!=='#top'});
+  if(!('IntersectionObserver' in window))return;
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id?'true':'false')})}})},{rootMargin:'-35% 0px -60% 0px'});
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)obs.observe(t)});
 })();
 </script>
 </body>

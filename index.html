@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moussa Traore</title>
+<meta name="description" content="Moussa Traore, software engineer working on data platforms and back-end services at CNRS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #646b73;
+  --line: #ececea;
+  --hover: #f6f6f4;
+  --accent: #2f6f62;
+  --font: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--muted); font-family: var(--font); font-size: 16px; line-height: 1.7; padding: 0 24px; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+strong { color: var(--fg); font-weight: 500; }
+
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 72px; }
+.side { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 96px 0 64px; }
+main { padding: 96px 0; min-width: 0; }
+
+h1 { margin: 0; color: var(--fg); font-size: 2.6rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
+.role { margin: 10px 0 0; color: var(--fg); font-size: 1.15rem; font-weight: 500; }
+.tagline { margin: 14px 0 0; max-width: 32ch; }
+
+nav ul { list-style: none; margin: 56px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+nav a { font-size: 0.9rem; font-weight: 500; color: var(--muted); }
+nav a:hover, nav a.active { color: var(--fg); }
+
+.contact { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; margin: 0; padding: 0; font-size: 0.92rem; }
+.contact a:hover { color: var(--accent); }
+.mail { margin: 12px 0 0; font-size: 0.9rem; }
+.mail a:hover { color: var(--accent); }
+
+section { margin-bottom: 96px; scroll-margin-top: 48px; }
+h2 { display: none; margin: 0 0 20px; color: var(--fg); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.about p { margin: 0 0 16px; max-width: 60ch; }
+
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.item { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 20px; padding: 20px; margin: 0 -20px; border-radius: 10px; transition: opacity .25s ease, background .25s ease; }
+.list:hover .item { opacity: 0.5; }
+.list .item:hover { opacity: 1; background: var(--hover); }
+.when { font-size: 0.8rem; padding-top: 2px; }
+.item h3 { margin: 0; color: var(--fg); font-size: 1rem; font-weight: 600; line-height: 1.45; }
+.item h3 span { color: var(--muted); font-weight: 400; }
+.item p { margin: 6px 0 0; font-size: 0.94rem; }
+.item ul.pts { margin: 6px 0 0; padding-left: 18px; font-size: 0.94rem; }
+.item ul.pts li { margin-bottom: 4px; }
+.tech { margin: 10px 0 0; font-size: 0.82rem; color: var(--accent); }
+.item a.title:hover { color: var(--accent); }
+.shot { display: block; margin: 14px 0 0; width: 100%; max-width: 100%; aspect-ratio: 2 / 1; object-fit: cover; object-position: top left; border: 1px solid var(--line); border-radius: 8px; }
+
+.more { display: inline-block; margin-top: 24px; color: var(--fg); font-weight: 500; font-size: 0.95rem; }
+.more:hover { color: var(--accent); }
+footer { font-size: 0.85rem; max-width: 50ch; }
+
+@media (max-width: 960px) {
+  body { padding: 0 20px; }
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .side { position: static; height: auto; padding: 64px 0 16px; gap: 28px; }
+  nav { display: none; }
+  main { padding: 40px 0 72px; }
+  h2 { display: block; }
+  section { margin-bottom: 64px; }
+  .item { grid-template-columns: minmax(0, 1fr); gap: 4px; margin: 0; padding: 0; }
+  .list { gap: 32px; }
+  .list:hover .item, .list .item:hover { opacity: 1; background: transparent; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="side">
+    <div>
+      <h1>Moussa Traore</h1>
+      <p class="role">Software Engineer, Data Platform</p>
+      <p class="tagline">I build data pipelines, back ends and access control for CNRS scientific observatories.</p>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <ul class="contact">
+        <li><a href="https://github.com/VOTRE-PSEUDO">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/moussanankotraore">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/moussatraore7173/">LeetCode</a></li>
+        <li><a href="resume.pdf">Resume</a></li>
+      </ul>
+      <p class="mail"><a href="mailto:moussatraore7173@gmail.com">moussatraore7173@gmail.com</a></p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I'm a software engineer at <strong>CNRS</strong> in Besançon, France, with two years of experience building data platforms and web applications in Python, Java and JavaScript.</p>
+      <p>I work on the software behind environmental and geophysical observatories: the <strong>Airflow pipelines</strong> that bring in sensor data, the <strong>APIs and web apps</strong> researchers use to explore it, and the <strong>Docker and GitLab CI/CD</strong> setup that runs it, with Keycloak single sign-on across services.</p>
+      <p>Outside work, I'm a founding member of <a href="https://www.aimali.ai"><strong>AI Mali</strong></a>, where we build AI tools and datasets for Bambara and software for reforestation in Mali.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ol class="list">
+        <li class="item">
+          <div class="when">2025 — Present</div>
+          <div>
+            <h3>Software Engineer, Data Platform <span>· CNRS</span></h3>
+            <ul class="pts">
+              <li>Build and validate Apache Airflow pipelines in Python ingesting 10M+ environmental sensor records from several sources.</li>
+              <li>Cut response times of key analytical PostgreSQL and MySQL queries by up to 60% through query rewrites and indexing.</li>
+              <li>Operate Keycloak (OpenID Connect) authentication for 10 open-source services behind Traefik.</li>
+              <li>Ship releases with Docker Compose through a tag-based GitLab CI/CD workflow, with Trivy scanning as a blocking stage.</li>
+            </ul>
+            <p class="tech">Python · Airflow · PostgreSQL · Keycloak · Docker · GitLab CI/CD</p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="when">2024 — 2025</div>
+          <div>
+            <h3>Software Engineer <span>· Forum des Marais Atlantiques</span></h3>
+            <ul class="pts">
+              <li>Developed Java EE back-end features and web services with an Angular front end for a national environmental data platform.</li>
+              <li>Introduced unit testing and verification-driven deployment, reducing production bugs by 25% and deployment time by 40%.</li>
+            </ul>
+            <p class="tech">Java EE · Angular · Oracle</p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="when">2024</div>
+          <div>
+            <h3>Software Engineering Intern <span>· Forum des Marais Atlantiques</span></h3>
+            <ul class="pts">
+              <li>Turned stakeholder needs into 15 functional and technical requirements for a national Oracle wetlands database.</li>
+              <li>Wrote the technical specification of a data architecture connecting 50,000+ datasets.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+      <a class="more" href="resume.pdf">View full resume →</a>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="list">
+        <li class="item">
+          <div class="when">CNRS</div>
+          <div>
+            <h3>OMIV web apps</h3>
+            <p>I maintain the R Shiny web apps and Flask back-ends of OMIV, the French Landslide Observatory, a national research service supported by CNRS Terre et Univers and run with five observatories. I handle all of the platform's configuration. The apps give open access to geodesy, hydrology and micro-seismicity data. A new version goes live in November 2026.</p>
+            <p class="tech">R · Shiny · Flask · Docker</p>
+            <img class="shot" src="omiv.jpg" alt="OMIV portal home page: observatory description and data access for geodesy, hydrology and seismology" loading="lazy">
+          </div>
+        </li>
+        <li class="item">
+          <div class="when">CNRS</div>
+          <div>
+            <h3>KarstFlow</h3>
+            <p>A web app I built for karst spring sensor data. Researchers upload raw files and the app detects and corrects sensor artefacts, such as out-of-water readings and isolated electronic spikes, while leaving real signal like floods untouched.</p>
+            <p class="tech">FastAPI · pandas · React · TypeScript</p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="when">AI Mali</div>
+          <div>
+            <h3>TimaTon</h3>
+            <p>An offline-first reforestation app for field agents in Mali: the mobile app records plantings with GPS and syncs when a connection returns. I took part in the technical choices (architecture and stack) and will set up the iOS release.</p>
+            <p class="tech">React Native · Expo · SQLite · Node.js · PostgreSQL</p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="when">AI Mali</div>
+          <div>
+            <h3><a class="title" href="https://www.aimali.ai">aimali.ai ↗</a></h3>
+            <p>Bilingual (French / English) website and admin CMS for AI Mali, built as one of three contributors.</p>
+            <p class="tech">React · Vite · Tailwind · Hono · Cloudflare Workers</p>
+            <img class="shot" src="aimali.jpg" alt="aimali.ai home page: An AI that listens before it reads" loading="lazy">
+          </div>
+        </li>
+        <li class="item">
+          <div class="when">AI Mali</div>
+          <div>
+            <h3>Bambara language dataset</h3>
+            <p>Collected and annotated 10,000+ Bambara words for a low-resource language dataset, as part of research on distributed AI for language modeling.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>MSc in Computer Science (Databases and AI), Université de Bourgogne Europe · French and Bambara (native), English (professional).</footer>
+  </main>
+</div>
+<script>
+(function () {
+  var links = document.querySelectorAll('nav a');
+  if (!('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('main section').forEach(function (s) { obs.observe(s); });
+})();
+</script>
+</body>
+</html>

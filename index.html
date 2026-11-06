@@ -34,6 +34,7 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 .side-nav a.sn-link[aria-current="true"]{color:#1f2328;font-weight:600}
 .side-nav a.sn-link[aria-current="true"] .dot{background:#1d4f91;border-color:#1d4f91}
 @media (min-width:1180px){.top-nav{display:none!important}.side-nav{display:block}}
+@media (min-width:1180px){#top{margin-left:calc(50% - 260px)!important;margin-right:auto!important}.side-nav{left:calc(50% - 500px);top:60px}}
 @media (prefers-reduced-motion:reduce){.side-nav a.sn-link,.side-nav .dot{transition:none}}
 </style>
 </head>
@@ -42,6 +43,7 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 <a class="sn-name" href="#top">Moussa Traore</a>
 <p class="sn-role">Software Engineer</p>
 <ol>
+<li><a class="sn-link" href="#about"><span class="dot" aria-hidden="true"></span>About</a></li>
 <li><a class="sn-link" href="#experience"><span class="dot" aria-hidden="true"></span>Experience</a></li>
 <li><a class="sn-link" href="#talks"><span class="dot" aria-hidden="true"></span>Talks &amp; publications</a></li>
 <li><a class="sn-link" href="#education"><span class="dot" aria-hidden="true"></span>Education</a></li>
@@ -55,6 +57,7 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 <div style="max-width: 760px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 20px; padding: 14px 0">
 <a href="#top" style="font-weight: 700; color: #1f2328; text-decoration: none">Moussa Traore</a>
 <div style="display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14px; font-weight: 500">
+<a href="#about" style="color: #3a4048">About</a>
 <a href="#experience" style="color: #3a4048">Experience</a>
 <a href="#talks" style="color: #3a4048">Talks</a>
 <a href="#education" style="color: #3a4048">Education</a>
@@ -79,9 +82,16 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 </nav>
 </header>
 
+<section id="about" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">About</h2>
+<p style="margin: 0; color: #3a4048; font-size: 16px">I'm a software engineer at CNRS in Besançon, France. For two years I have built the software behind environmental and geophysical observatories: data pipelines, back-end services, access control, and the web apps researchers use every day.</p>
+<p style="margin: 0; color: #3a4048; font-size: 16px">Outside work, I'm an early member of AI Mali, where I build the website's front end, chair weekly talks and work on tools for Malian languages.</p>
+<p style="margin: 0; color: #3a4048; font-size: 16px">I'm looking for software engineering roles in back-end, data or infrastructure, in France, Switzerland or abroad.</p>
+</section>
+
 <section id="stack" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
 <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Stack</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px">
 
 <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #e6e8eb; border-radius: 8px; font-size: 14px; color: #3a4048">
 <img src="img/python.svg" alt="" style="width: 20px; height: 20px">
@@ -267,7 +277,7 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 <div style="display: flex; flex-direction: column">
 <article style="display: flex; gap: 20px; align-items: stretch">
 <div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
-<img src="img/ub-logo.svg" alt="Université de Bourgogne logo" style="width: 48px; height: 48px; border-radius: 10px; object-fit: contain; padding: 6px; box-sizing: border-box; background: #1f2328; flex: none">
+<img src="img/ub-logo.svg" alt="Université de Bourgogne logo" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #e6e8eb; object-fit: contain; padding: 3px; box-sizing: border-box; background: #ffffff; flex: none">
 <div aria-hidden="true" style="width: 2px; flex: 1; min-height: 24px; background: #dfe3e8; margin-top: 8px"></div>
 </div>
 <div style="flex: 1; min-width: 0; padding-bottom: 28px">
@@ -280,7 +290,7 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 </article>
 <article style="display: flex; gap: 20px; align-items: stretch">
 <div style="display: flex; flex-direction: column; align-items: center; width: 48px; flex: none">
-<img src="img/ub-logo.svg" alt="Université de Bourgogne logo" style="width: 48px; height: 48px; border-radius: 10px; object-fit: contain; padding: 6px; box-sizing: border-box; background: #1f2328; flex: none">
+<img src="img/ub-logo.svg" alt="Université de Bourgogne logo" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #e6e8eb; object-fit: contain; padding: 3px; box-sizing: border-box; background: #ffffff; flex: none">
 </div>
 <div style="flex: 1; min-width: 0">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px">
@@ -329,8 +339,8 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 <article style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-start">
 <img src="img/raymarch.jpg" alt="Ray-marched scene with depth of field and motion blur" style="width: 168px; max-width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; border: 1px solid #dfe3e8; flex: none">
 <div style="flex: 1 1 320px; min-width: 0">
-<h3 style="margin: 0; font-size: 16px; font-weight: 600">Real-time ray marching engine</h3>
-<p style="margin: 6px 0 0; color: #3a4048; font-size: 15px">An interactive GPU renderer whose scenes are signed distance functions combined in a CSG tree, with a free camera, temporal smoothing, depth of field and motion blur.</p>
+<h3 style="margin: 0; font-size: 16px; font-weight: 600"><a href="https://github.com/MusaNanko/MGSI-Ray-Marching">Real-time ray marching engine ↗</a></h3>
+<p style="margin: 6px 0 0; color: #3a4048; font-size: 15px">University project where I built most of the engine: an interactive GPU renderer whose scenes are signed distance functions combined in a CSG tree, with a free camera, temporal smoothing, depth of field and motion blur.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px">
 <span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">C++</span>
 <span style="padding: 4px 12px; border-radius: 999px; background: #edf2f8; color: #1d4f91; font-size: 13px; font-weight: 500">OpenGL</span>
@@ -364,7 +374,7 @@ nav div div a{padding:4px 0;transition:color .2s ease,box-shadow .2s ease}
 </section>
 
 <section id="links" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Links</h2>
+<h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5b626b">Contact</h2>
 <div style="display: grid; grid-template-columns: var(--two-col); gap: 12px">
 <a href="https://github.com/MusaNanko" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">GitHub <span style="color: #5b626b; font-weight: 400">MusaNanko</span></a>
 <a href="https://www.linkedin.com/in/moussanankotraore" style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 12px 16px; border: 1px solid #e6e8eb; border-radius: 10px; color: #1f2328; font-weight: 500; text-decoration: none">LinkedIn <span style="color: #5b626b; font-weight: 400">moussanankotraore</span></a>
